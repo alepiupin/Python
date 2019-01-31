@@ -105,17 +105,11 @@ def dibuja_bienes_por_tipo(registros):
         ENTRADA:
         - registros: lista de tuplas con información de bienes -> [(int, str, int, str, str)]        
     '''
-    dic_por_tipos = counter_tipos(registros)
-    numero_bienes = list({dic_por_tipos[tipo.category] for tipo in registros})
-    tipos = list(dic_por_tipos.keys())
+    dict_por_tipo = bienes_por_tipo(registros)
+    numero_bienes = [len(dict_por_tipo[tipo]) for tipo in dict_por_tipo]
+    tipos = list(dict_por_tipo.keys())
     plt.barh(range(len(numero_bienes)), numero_bienes, tick_label=tipos)
     plt.show()
-    
-def counter_tipos(registros):
-    result = Counter()
-    tipos = [registro.category for registro in registros]
-    result.update(tipos)
-    return result
     
 # EJERCICIO 5:
 def pais_mas_bienes(registros, tipo_bien='Cultural'):

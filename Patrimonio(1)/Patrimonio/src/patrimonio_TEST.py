@@ -31,12 +31,11 @@ def test_pais_mas_bienes(registros):
 if __name__ == '__main__':
     registros = lee_bienes('../data/whs.csv')
     print("Número total de bienes:", len(registros)) 
-    print(registros[:5], '\n')
     '''
     Elimine los comentarios de las llamadas a los test a medida que
     vaya escribiendo las respectivas funciones
     '''
     #test_calcula_paises(registros)
     #test_bienes_por_tipo(registros)
-    #test_dibuja_bienes_por_tipo(registros)
-    test_pais_mas_bienes(registros)
+    test_dibuja_bienes_por_tipo(registros)
+    #test_pais_mas_bienes(registros)
